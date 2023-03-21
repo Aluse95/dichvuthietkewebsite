@@ -87,6 +87,5 @@
       </div>
     </div>
   </div>
-  
 <?php endif; ?>
 <?php /**PATH D:\xampp\htdocs\dichvuthietkewebsite\resources\views/frontend/blocks/cms_post/styles/default.blade.php ENDPATH**/ ?>

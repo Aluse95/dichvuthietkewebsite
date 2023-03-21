@@ -1,6 +1,18 @@
 /* MOBILE */
 
 @media (max-width: 540px) {
+  #intro .banner-furniture {
+    padding: 0 20px;
+    max-width: 100% !important;
+  }
+  #process .banner-furniture {
+    padding: 0 20px;
+    max-width: 100% !important;
+  }
+  .section .card-form {
+    padding: 0 20px;
+    max-width: 100% !important;
+  }
   .home-category {
     margin-top: 75px;
   }

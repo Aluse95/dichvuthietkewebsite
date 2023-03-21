@@ -231,6 +231,10 @@ class Consts
                     "name" => "page.website"
                 ],
                 [
+                    "title" => "Thiết kế Nội Thất",
+                    "name" => "page.furniture"
+                ],
+                [
                     "title" => "Dịch vụ Content",
                     "name" => "page.service_content"
                 ]

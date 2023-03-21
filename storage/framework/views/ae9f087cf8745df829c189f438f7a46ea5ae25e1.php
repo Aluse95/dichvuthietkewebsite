@@ -30,7 +30,7 @@
   .phone-vr-circle-fill {
     width: 65px;
     height: 65px;
-    top: 12px;
+    top: -80px;
     left: 12px;
     position: absolute;
     box-shadow: 0 0 0 0 #c31d1d;
@@ -52,7 +52,7 @@
     width: 40px;
     height: 40px;
     line-height: 40px;
-    top: 25px;
+    top: -67px;
     left: 25px;
     position: absolute;
     border-radius: 50%;
@@ -135,7 +135,7 @@
 
   .phone-bar a {
     position: fixed;
-    bottom: 25px;
+    bottom: 118px;
     left: 30px;
     z-index: -1;
     background: rgb(232, 58, 58);

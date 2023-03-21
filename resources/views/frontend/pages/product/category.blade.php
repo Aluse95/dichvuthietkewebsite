@@ -38,76 +38,8 @@
       <h1>{{ $page_title }}</h1>
     </div>
   </div>
-
-  <div id="category">
-    <div class="container">
-      <h4>
-        <span> Giao diện website theo lĩnh vực </span>
-      </h4>
-      <div class="p-category row">
-        @isset($taxonomys)
-              @foreach ($taxonomys as $item)
-                @php
-                  $title = $item->json_params->title->{$locale} ?? $item->title;
-                  $brief = $item->json_params->brief->{$locale} ?? $item->brief;
-                  $image = $item->json_params->image ?? '';
-                  // Viet ham xu ly lay slug
-                  $alias_category = App\Helpers::generateRoute(App\Consts::TAXONOMY['product'], $item->alias ?? $title, $item->id);
-                @endphp
-
-                <a href="{{ $alias_category }}" class="col-lg-2 col-md-3 col-sm-4 category-item">
-                  <div class="category-item-img">
-                    <img class="img-fluid w-100 h-100 lazyload" 
-                    src="{{ asset('themes/frontend/f4web/images/lazyload.gif')}}" 
-                    data-src="{{ $image }}" alt="{{ $title }}">
-                  </div>
-                  <p>{{ $title }}</p>
-                </a>
-              @endforeach
-            @endisset
-      </div>
-      <div class="m-category swiper">
-        <div class="swiper-wrapper">
-          @foreach ($datas as $data)
-            <div class="swiper-slide">
-              <div class="container">
-                <div class="row">
-                  @foreach ($data as $item)
-                    @php
-                      $title = $item->json_params->title->{$locale} ?? $item->title;
-                      $brief = $item->json_params->brief->{$locale} ?? $item->brief;
-                      $image = $item->json_params->image ?? '';
-                      $date = date('H:i d/m/Y', strtotime($item->created_at));
-                      // Viet ham xu ly lay slug
-                      $alias_category = App\Helpers::generateRoute(App\Consts::TAXONOMY['product'], $item->alias ?? $title, $item->id);
-                    @endphp
-                    
-                    <div class="col-4">
-                      <a href="{{ $alias_category }}" class="category-item">
-                        <div class="category-item-img">
-                          <img class="img-fluid w-100 h-100 lazyload" 
-                          src="{{ asset('themes/frontend/f4web/images/lazyload.gif')}}" 
-                          data-src="{{ $image }}" alt="{{ $title }}">
-                        </div>
-                        <p>{{ $title }}</p>
-                      </a>
-                    </div>
-                  @endforeach
-                </div>
-              </div>
-            </div>
-          @endforeach
-        </div>
-        <div class="swiper-pagination"></div>
-      </div>
-    </div>
-  </div>
-
   <div id="project">
     <div class="container">
-      <h4>
-        <span>{{ $page_title }}</span>
-      </h4>
       <div class="p-project row">
         @foreach ($posts as $item)
           @php
@@ -175,6 +107,73 @@
       </div>
     </div>
   </div>
+  <div id="category">
+    <div class="container">
+      <h4>
+        <span> Giao diện website theo lĩnh vực </span>
+      </h4>
+      <div class="p-category row">
+        @isset($taxonomys)
+              @foreach ($taxonomys as $item)
+                @php
+                  $title = $item->json_params->title->{$locale} ?? $item->title;
+                  $brief = $item->json_params->brief->{$locale} ?? $item->brief;
+                  $image = $item->json_params->image ?? '';
+                  // Viet ham xu ly lay slug
+                  $alias_category = App\Helpers::generateRoute(App\Consts::TAXONOMY['product'], $item->alias ?? $title, $item->id);
+                @endphp
+
+                <a href="{{ $alias_category }}" class="col-lg-2 col-md-3 col-sm-4 category-item">
+                  <div class="category-item-img">
+                    <img class="img-fluid w-100 h-100 lazyload" 
+                    src="{{ asset('themes/frontend/f4web/images/lazyload.gif')}}" 
+                    data-src="{{ $image }}" alt="{{ $title }}">
+                  </div>
+                  <p>{{ $title }}</p>
+                </a>
+              @endforeach
+            @endisset
+      </div>
+      <div class="m-category swiper">
+        <div class="swiper-wrapper">
+          @isset($datas)
+            @foreach ($datas as $data)
+              <div class="swiper-slide">
+                <div class="container">
+                  <div class="row">
+                    @foreach ($data as $item)
+                      @php
+                        $title = $item->json_params->title->{$locale} ?? $item->title;
+                        $brief = $item->json_params->brief->{$locale} ?? $item->brief;
+                        $image = $item->json_params->image ?? '';
+                        $date = date('H:i d/m/Y', strtotime($item->created_at));
+                        // Viet ham xu ly lay slug
+                        $alias_category = App\Helpers::generateRoute(App\Consts::TAXONOMY['product'], $item->alias ?? $title, $item->id);
+                      @endphp
+                      
+                      <div class="col-4">
+                        <a href="{{ $alias_category }}" class="category-item">
+                          <div class="category-item-img">
+                            <img class="img-fluid w-100 h-100 lazyload" 
+                            src="{{ asset('themes/frontend/f4web/images/lazyload.gif')}}" 
+                            data-src="{{ $image }}" alt="{{ $title }}">
+                          </div>
+                          <p>{{ $title }}</p>
+                        </a>
+                      </div>
+                    @endforeach
+                  </div>
+                </div>
+              </div>
+            @endforeach
+          @endisset
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+  </div>
+
+  
 
   {{-- End content --}}
 @endsection
