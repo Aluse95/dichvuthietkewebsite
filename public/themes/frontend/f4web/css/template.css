@@ -21,14 +21,18 @@
 /* END CATEGORY */
 
 /* START PROJEC */
+#project {
+  margin-top: 50px;
+  background-color: rgb(212, 233, 253);
+}
 
 #project h4 {
-  font-size: 25px;
+  font-size: 30px;
   text-transform: capitalize;
   font-weight: 600;
-  padding: 10px 20px !important;
-  background-color: var(--blue-4);
-  color: #fff;
+  padding: 30px 20px 0px !important;
+  /* background-color: #fff; */
+  color: var(--blue-4);
   margin: 0 auto;
   width: fit-content;
   border-radius: 30px;
@@ -37,7 +41,12 @@
 #project .row {
   margin-top: 40px;
 }
-
+#project .project-item {
+  padding: 0 16px;
+}
+#project .project-item-img {
+  border: none;
+}
 #project .project-pagination {
   display: flex;
   margin-top: 40px;

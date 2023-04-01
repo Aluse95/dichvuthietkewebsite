@@ -40,6 +40,13 @@
       width: fit-content;
       border-radius: 30px;
     }
+    #project .project-wrap {
+      border: 1px solid var(--blue-4);
+    }
+    #project .project-item-img {
+      border: none;
+      border-radius: 16px;
+    }
   </style>
   
   <div id="banner">
@@ -54,52 +61,85 @@
       </h1>
     </div>
   </div>
-  <section id="content pt-5">
-    <div class="content-wrap">
-      <div class="container mb-3">
-        <h4 class="mt-5">
-          <span> Kết quả tìm kiếm </span>
-        </h4>
-        <div class="row mb-5 mt-5 clearfix">
-          <div class="postcontent col-lg-12">
-            <div class="row">
-              <?php $__currentLoopData = $posts; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                <?php
-                  $title = $item->json_params->title->{$locale} ?? $item->title;
-                  $brief = $item->json_params->brief->{$locale} ?? $item->brief;
-                  $image = $item->image_thumb != '' ? $item->image_thumb : ($item->image != '' ? $item->image : null);
-                  // $date = date('H:i d/m/Y', strtotime($item->created_at));
-                  $date = date('d', strtotime($item->created_at));
-                  $month = date('M', strtotime($item->created_at));
-                  $year = date('Y', strtotime($item->created_at));
-                  // Viet ham xu ly lay slug
-                  $alias_category = App\Helpers::generateRoute(App\Consts::TAXONOMY['post'], $item->taxonomy_title, $item->taxonomy_id);
-                  $alias = App\Helpers::generateRoute(App\Consts::TAXONOMY['post'], $title, $item->id, 'detail', $item->taxonomy_title);
-                ?>
-
-                <div class="col-lg-4 col-sm-12">
-                  <div class="blog-post-container">
-                    <div class="blog-post-img">
-                      <a href="<?php echo e($alias); ?>"><img src="<?php echo e($image); ?>" alt="<?php echo e($title); ?>"></a>
-                    </div>
-                    <div class="blog-post-text">
-                      <a href="<?php echo e($alias); ?>" class="title"><?php echo e($title); ?></a>
-                      <p class="date">
-                        <i class="fa-solid fa-calendar"></i><?php echo e($date); ?>/<?php echo e($month); ?>/<?php echo e($year); ?>
-
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-              <?php echo e($posts->withQueryString()->links('frontend.pagination.default')); ?>
-
+  <div id="project">
+    <div class="container">
+      <h4>
+        <span>Kết quả tìm kiếm</span>
+      </h4>
+      <div class="p-project row">
+        <?php $__currentLoopData = $posts; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+          <?php
+            $title = $item->json_params->title->{$locale} ?? $item->title;
+            $brief = $item->json_params->brief->{$locale} ?? $item->brief;
+            $image = $item->image_thumb != '' ? $item->image_thumb : ($item->image != '' ? $item->image : null);
+            $date = date('H:i d/m/Y', strtotime($item->created_at));
+            $link_demo = $item->json_params->link_demo ?? '';
+            // Viet ham xu ly lay slug
+            $alias_category = App\Helpers::generateRoute(App\Consts::TAXONOMY['product'], $item->alias ?? $item->taxonomy_title, $item->taxonomy_id);
+            // $alias = App\Helpers::generateRoute(App\Consts::TAXONOMY['product'], $title, $item->id, 'detail', $item->taxonomy_title);
+            // $alias = route(App\Consts::ROUTE_POST['product'], ['alias_category' => $item->alias ?? Str::slug($item->title)]);
+            $alias = App\Helpers::generateRoute(App\Consts::TAXONOMY['post'], $item->alias ?? $title, $item->id, 'detail', $item->taxonomy_title);
+          ?>
+          <div class="col-lg-4 col-md-6 col-sm-12 project-item">
+            <div class="project-wrap">
+              <div class="project-item-img">
+                <img class="lazyload" src="<?php echo e(asset('themes/frontend/f4web/images/lazyload.gif')); ?>" 
+                data-src="<?php echo e($image); ?>" alt="<?php echo e($title); ?>" />
+                <?php if($link_demo): ?>
+                  <a href="<?php echo e($link_demo); ?>" class="demo-btn">Xem Demo</a>
+                <?php endif; ?>
+                <a href="<?php echo e($alias); ?>" class="detail-btn">Xem chi tiết</a>
+              </div>
+              <a href="<?php echo e($alias); ?>" class="project-item-title"><?php echo e($title); ?></a>
             </div>
           </div>
+        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+      </div>
+
+      <div class="p-project mt-3">
+        <div class="d-flex justify-content-center w-100">
+          <?php echo e($posts->withQueryString()->links('frontend.pagination.default')); ?>
+
         </div>
       </div>
+
+      <div class="m-project row">
+        <?php $__currentLoopData = $posts; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+          <?php
+            $title = $item->json_params->title->{$locale} ?? $item->title;
+            $brief = $item->json_params->brief->{$locale} ?? $item->brief;
+            $image = $item->image_thumb != '' ? $item->image_thumb : ($item->image != '' ? $item->image : null);
+            $date = date('H:i d/m/Y', strtotime($item->created_at));
+            $link_demo = $item->json_params->link_demo ?? '';
+            // Viet ham xu ly lay slug
+            $alias_category = App\Helpers::generateRoute(App\Consts::TAXONOMY['product'], $item->alias ?? $item->taxonomy_title, $item->taxonomy_id);
+            // $alias = App\Helpers::generateRoute(App\Consts::TAXONOMY['product'], $title, $item->id, 'detail', $item->taxonomy_title);
+            // $alias = route(App\Consts::ROUTE_POST['product'], ['alias_category' => $item->alias ?? Str::slug($item->title)]);
+            $alias = App\Helpers::generateRoute(App\Consts::TAXONOMY['post'], $item->alias ?? $title, $item->id, 'detail', $item->taxonomy_title);
+          ?>
+          <div class="col-lg-4 col-md-6 col-sm-12 project-item">
+            <div class="project-wrap">
+              <div class="project-item-img">
+                <img class="lazyload" src="<?php echo e(asset('themes/frontend/f4web/images/lazyload.gif')); ?>" 
+                data-src="<?php echo e($image); ?>" alt="<?php echo e($title); ?>" />
+                <?php if($link_demo): ?>
+                  <a href="<?php echo e($link_demo); ?>" class="demo-btn">Xem Demo</a>
+                <?php endif; ?>
+                <a href="<?php echo e($alias); ?>" class="detail-btn">Xem chi tiết</a>
+              </div>
+              <a href="<?php echo e($alias); ?>" class="project-item-title"><?php echo e($title); ?></a>
+            </div>
+          </div>
+        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+
+      </div>
+      <div class="m-project mt-3">
+        <?php echo e($posts->withQueryString()->links('frontend.pagination.default')); ?>
+
+      </div>
     </div>
-  </section>
+  </div>
+  
   <hr>
   <div id="category">
     <div class="container">

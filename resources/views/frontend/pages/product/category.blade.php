@@ -54,16 +54,18 @@
             // $alias = route(App\Consts::ROUTE_POST['product'], ['alias_category' => $item->alias ?? Str::slug($item->title)]);
             $alias = App\Helpers::generateRoute(App\Consts::TAXONOMY['post'], $item->alias ?? $title, $item->id, 'detail', $item->taxonomy_title);
           @endphp
-          <div class="col-lg-4 col-md-6 col-sm-12 project-item">
-            <div class="project-item-img">
-              <img class="lazyload" src="{{ asset('themes/frontend/f4web/images/lazyload.gif')}}" 
-              data-src="{{ $image }}" alt="{{ $title }}" />
-              @if ($link_demo)
-                <a href="{{ $link_demo }}" class="demo-btn">Xem Demo</a>
-              @endif
-              <a href="{{ $alias }}" class="detail-btn">Xem chi tiết</a>
+          <div class="col-lg-4 col-md-6 col-sm-12 project-item hhhhhhhhhhhhhh">
+            <div class="project-wrap">
+              <div class="project-item-img">
+                <img class="lazyload" src="{{ asset('themes/frontend/f4web/images/lazyload.gif')}}" 
+                data-src="{{ $image }}" alt="{{ $title }}" />
+                @if ($link_demo)
+                  <a href="{{ $link_demo }}" class="demo-btn">Xem Demo</a>
+                @endif
+                <a href="{{ $alias }}" class="detail-btn">Xem chi tiết</a>
+              </div>
+              <a href="{{ $alias }}" class="project-item-title">{{ $title }}</a>
             </div>
-            <a href="{{ $alias }}" class="project-item-title">{{ $title }}</a>
           </div>
         @endforeach
       </div>

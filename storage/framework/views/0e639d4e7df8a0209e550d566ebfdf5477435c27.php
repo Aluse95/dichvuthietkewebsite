@@ -113,15 +113,17 @@ $datas = $taxonomys->chunk(6);
             $alias = App\Helpers::generateRoute(App\Consts::TAXONOMY['post'], $item->alias ?? $title, $item->id, 'detail', $item->taxonomy_title);
           ?>
           <div class="col-lg-4 col-md-6 col-sm-12 project-item">
-            <div class="project-item-img">
-              <img class="lazyload" src="<?php echo e(asset('themes/frontend/f4web/images/lazyload.gif')); ?>" 
-              data-src="<?php echo e($image); ?>" alt="<?php echo e($title); ?>" />
-              <?php if($link_demo): ?>
-                <a href="<?php echo e($link_demo); ?>" class="demo-btn">Xem Demo</a>
-              <?php endif; ?>
-              <a href="<?php echo e($alias); ?>" class="detail-btn">Xem chi tiết</a>
+            <div class="project-wrap">
+              <div class="project-item-img">
+                <img class="lazyload" src="<?php echo e(asset('themes/frontend/f4web/images/lazyload.gif')); ?>" 
+                data-src="<?php echo e($image); ?>" alt="<?php echo e($title); ?>" />
+                <?php if($link_demo): ?>
+                  <a href="<?php echo e($link_demo); ?>" class="demo-btn">Xem Demo</a>
+                <?php endif; ?>
+                <a href="<?php echo e($alias); ?>" class="detail-btn">Xem chi tiết</a>
+              </div>
+              <a href="<?php echo e($alias); ?>" class="project-item-title"><?php echo e($title); ?></a>
             </div>
-            <a href="<?php echo e($alias); ?>" class="project-item-title"><?php echo e($title); ?></a>
           </div>
         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
       </div>
@@ -148,15 +150,17 @@ $datas = $taxonomys->chunk(6);
             $alias = App\Helpers::generateRoute(App\Consts::TAXONOMY['post'], $item->alias ?? $title, $item->id, 'detail', $item->taxonomy_title);
           ?>
           <div class="col-lg-4 col-md-6 col-sm-12 project-item">
-            <div class="project-item-img">
-              <img class="lazyload" src="<?php echo e(asset('themes/frontend/f4web/images/lazyload.gif')); ?>" 
-              data-src="<?php echo e($image); ?>" alt="<?php echo e($title); ?>" />
-              <?php if($link_demo): ?>
-                <a href="<?php echo e($link_demo); ?>" class="demo-btn">Xem Demo</a>
-              <?php endif; ?>
-              <a href="<?php echo e($alias); ?>" class="detail-btn">Xem chi tiết</a>
+            <div class="project-wrap">
+              <div class="project-item-img">
+                <img class="lazyload" src="<?php echo e(asset('themes/frontend/f4web/images/lazyload.gif')); ?>" 
+                data-src="<?php echo e($image); ?>" alt="<?php echo e($title); ?>" />
+                <?php if($link_demo): ?>
+                  <a href="<?php echo e($link_demo); ?>" class="demo-btn">Xem Demo</a>
+                <?php endif; ?>
+                <a href="<?php echo e($alias); ?>" class="detail-btn">Xem chi tiết</a>
+              </div>
+              <a href="<?php echo e($alias); ?>" class="project-item-title"><?php echo e($title); ?></a>
             </div>
-            <a href="<?php echo e($alias); ?>" class="project-item-title"><?php echo e($title); ?></a>
           </div>
         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
