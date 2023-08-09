@@ -22,7 +22,7 @@
       background-color: #f1f1f1;
     }
     .price-img {
-      max-width: 50%;
+      max-width: 30%;
     }
     .btn-price {
       border: none;

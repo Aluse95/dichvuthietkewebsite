@@ -9,10 +9,19 @@
 <script default src="{{ asset('themes/frontend/f4web/js/faq.js') }}"></script>
 <script default src="{{ asset('themes/frontend/f4web/js/numberCounter.js') }}"></script>
 <script default src="{{ asset('themes/frontend/f4web/js/circleContent.js') }}"></script>
-<script default src="{{ asset('themes/frontend/f4web/js/searchModal.js') }}"></script>
+{{--<script default src="{{ asset('themes/frontend/f4web/js/searchModal.js') }}"></script>--}}
 <script default src="{{ asset('themes/frontend/f4web/js/footer.js') }}"></script>
 <script default src="{{ asset('themes/frontend/f4web/js/header.js') }}"></script>
 
+{{--Vanht--}}
+<script src="{{ asset('themes/frontend/website-service/js/all.min.js') }}"></script>
+<script src="{{ asset('themes/frontend/website-service/js/jquery.min.js') }}"></script>
+<script src="{{ asset('themes/frontend/website-service/js/popper.min.js') }}"></script>
+<script src="{{ asset('themes/frontend/website-service/js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('themes/frontend/website-service/js/jquery.sticky.js') }}"></script>
+<script src="{{ asset('themes/frontend/website-service/js/jquery.magnific-popup.min.js') }}"></script>
+<script src="{{ asset('themes/frontend/website-service/js/slick.min.js') }}"></script>
+<script src="{{ asset('themes/frontend/website-service/js/main.js') }}"></script>
 
 <script default>
   $(function() {
@@ -195,20 +204,37 @@
     return array.filter((item) => fields.some((field) => item[field] === value));
   };
 
-  // $(function(){
-  //    function show_popup(){
-  //       $("#modal-sign-up").css('display','block')
-  //    };
-  //    window.setTimeout( show_popup, 7000 ); // 7 seconds
-  //    $('.button-close').click(function() {
-  //     $("#modal-sign-up").css('display','none')
-  //   });
-  //   $('.modal1').click(function(e) {
-  //     if (!$('.card').is(e.target) && $('.card').has(e.target).length == 0) {
-  //       $('.modal1').hide();
-  //     }
-  //   })
-  // });
+  $(function(){
+     function show_popup(){
+        $("#modal-sign-up").css('display','block')
+     };
+     window.setTimeout( show_popup, 30000 ); // 7 seconds
+     $('.button-close').click(function() {
+      $("#modal-sign-up").css('display','none')
+    });
+    $('.modal1').click(function(e) {
+      if (!$('.card').is(e.target) && $('.card').has(e.target).length == 0) {
+        $('.modal1').hide();
+      }
+    })
+  });
+
+  function toggleContent(target) {
+      var contentDiv = document.querySelector(target);
+
+      if (!contentDiv) return; // Nếu không tìm thấy thẻ div với id hoặc class tương ứng, thoát khỏi function
+
+      if (contentDiv.classList.contains("show")) {
+          contentDiv.style.height = "0";
+          setTimeout(function () {
+              contentDiv.classList.remove("show", "collapsing");
+          }, 300);
+      } else {
+          contentDiv.style.height = "auto";
+          contentDiv.classList.add("show", "collapsing");
+      }
+  }
+
 </script>
 
 

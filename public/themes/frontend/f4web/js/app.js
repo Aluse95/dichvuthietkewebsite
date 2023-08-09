@@ -124,7 +124,7 @@ const peopleSwiper = new Swiper("#people .people-leader .people-leader-p", {
   // Optional parameters
   direction: "horizontal",
   slidesPerView: 3,
-  spaceBetween: 200,
+  spaceBetween: 100,
   loop: true,
   autoplay: {
     delay: 3000,

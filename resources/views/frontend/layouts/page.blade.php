@@ -52,7 +52,7 @@
       @include('frontend.blocks.header.styles.default')
 
       {{-- Foreach and print block content by current page --}}
-  
+
       @if (isset($blocks_selected))
         @foreach ($blocks_selected as $block)
           @if (\View::exists('frontend.blocks.' . $block->block_code . '.index'))
@@ -67,7 +67,7 @@
 
     </div>
   </div>
-  
+
   {{-- Include fixed alert --}}
   @include('frontend.components.sticky.alert')
   {{-- Include scripts --}}
@@ -75,7 +75,7 @@
   {{-- Scripts custom each page --}}
   @stack('script')
   {{-- Include sticky contact --}}
-  @include('frontend.components.sticky.contact')
+{{--  @include('frontend.components.sticky.contact')--}}
 
   {{-- Include popup --}}
   @include('frontend.components.popup.default')

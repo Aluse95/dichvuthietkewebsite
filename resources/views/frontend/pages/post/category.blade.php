@@ -80,11 +80,11 @@
                 {!! $taxonomy->json_params->content->{$locale} ?? '' !!}
               </div>
 
-              <div class="col-md-3">
+              {{-- <div class="col-md-3">
                 <button class="button button-border button-rounded button-fill button-blue m-0 ls0 text-uppercase" id="btn-show">
                   <span id="show-more">Xem thêm</span>
                 </button>
-              </div>
+              </div> --}}
             </div>
           @endif
 

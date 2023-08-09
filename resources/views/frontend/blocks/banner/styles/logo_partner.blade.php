@@ -14,61 +14,38 @@
 
   @endphp
 
-  <div id="client-home">
-    <h2>{{ $title }}</h2>
-    <div class="swiper client-pc">
-      <div class="swiper-wrapper">
-        @if ($block_childs)
-          @foreach ($block_childs as $item)
-            @php
-              $title = $item->json_params->title->{$locale} ?? $item->title;
-              $brief = $item->json_params->brief->{$locale} ?? $item->brief;
-              $image = $item->image != '' ? $item->image : null;
-              $url_link = $item->url_link != '' ? $item->url_link : '';
-              $url_link_title = $item->json_params->url_link_title->{$locale} ?? $item->url_link_title;
-              $icon = $item->icon != '' ? $item->icon : '';
-              $style = $item->json_params->style ?? '';
-            @endphp
-
-            <div class="swiper-slide">
-              <div class="client-img">
-                <img class="lazyload" src="{{ asset('themes/frontend/f4web/images/lazyload.gif')}}" 
-                data-src="{{ $image }}" alt="{{ $title }}"/>
+  <section id="client-home" class="our-partners">
+      <div class="container">
+          <div class="v-title text-center">
+              <div class="box-title">
+                  <span>/</span>
+                  <span>Our partners</span>
               </div>
-            </div>
-          @endforeach
-        @endif       
+              <h2 class="title">
+                  {{ $title }}
+              </h2>
+          </div>
+          <div class="customer-logos slider">
+              @if ($block_childs)
+                  @foreach ($block_childs as $item)
+                      @php
+                          $title = $item->json_params->title->{$locale} ?? $item->title;
+                          $brief = $item->json_params->brief->{$locale} ?? $item->brief;
+                          $image = $item->image != '' ? $item->image : null;
+                          $url_link = $item->url_link != '' ? $item->url_link : '';
+                          $url_link_title = $item->json_params->url_link_title->{$locale} ?? $item->url_link_title;
+                          $icon = $item->icon != '' ? $item->icon : '';
+                          $style = $item->json_params->style ?? '';
+                      @endphp
+                      <div class="slide">
+                          <img class="lazyload" src="{{ asset('themes/frontend/f4web/images/lazyload.gif')}}"
+                               data-src="{{ $image }}" alt="{{ $title }}"/>
+                      </div>
+                  @endforeach
+              @endif
+          </div>
       </div>
-    </div>
-    <div class="swiper client-m">
-      <div class="swiper-wrapper">
-        @if ($block_childs)
-          @foreach ($block_childs as $item)
-            @php
-              $title = $item->json_params->title->{$locale} ?? $item->title;
-              $brief = $item->json_params->brief->{$locale} ?? $item->brief;
-              $image = $item->image != '' ? $item->image : null;
-              $url_link = $item->url_link != '' ? $item->url_link : '';
-              $url_link_title = $item->json_params->url_link_title->{$locale} ?? $item->url_link_title;
-              $icon = $item->icon != '' ? $item->icon : '';
-              $style = $item->json_params->style ?? '';
-            @endphp
-
-            <div class="swiper-slide client-m">
-              <div class="row">
-                <div class="col-12">
-                  <div class="client-img">
-                    <img class="lazyload" src="{{ asset('themes/frontend/f4web/images/lazyload.gif')}}" 
-                    data-src="{{ $image }}" alt="{{ $title }}"/>
-                  </div>
-                </div>
-              </div>
-            </div>
-          @endforeach
-        @endif       
-      </div>
-    </div>
-
-  </div>
-
+  </section>
 @endif
+
+

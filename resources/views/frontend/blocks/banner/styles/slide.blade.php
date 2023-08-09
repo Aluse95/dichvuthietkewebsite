@@ -22,14 +22,14 @@
             $url_link_title = $item->json_params->url_link_title->{$locale} ?? $item->url_link_title;
             $icon = $item->icon != '' ? $item->icon : '';
             $style = isset($item->json_params->style) && $item->json_params->style == 'slider-caption-right' ? 'd-none' : '';
-            
+
             $image_for_screen = null;
             if ($agent->isDesktop() && $image_background != null) {
                 $image_for_screen = $image_background;
             } else {
                 $image_for_screen = $image;
             }
-            
+
           @endphp
 
           <div class="owl-item bg-cover" style="background-image: url({{ $image_for_screen ?? '' }})">

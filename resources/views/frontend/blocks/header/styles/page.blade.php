@@ -125,9 +125,9 @@
                             $title = isset($item->json_params->title->{$locale}) && $item->json_params->title->{$locale} != '' ? $item->json_params->title->{$locale} : $item->name;
                             $url = $item->url_link;
                             $active = $url == url()->full() ? 'current' : '';
-                
+
                             $content .= '<li class="menu-item ' . $active . '"><a class="menu-link" href="' . $url . '"><div>' . $title . '</div></a>';
-                
+
                             if ($item->sub > 0) {
                                 $content .= '<ul class="sub-menu-container">';
                                 foreach ($menu as $item_sub) {
@@ -135,9 +135,9 @@
                                     if ($item_sub->parent_id == $item->id) {
                                         $title = isset($item_sub->json_params->title->{$locale}) && $item_sub->json_params->title->{$locale} != '' ? $item_sub->json_params->title->{$locale} : $item_sub->name;
                                         $url = $item_sub->url_link;
-                
+
                                         $content .= '<li class="menu-item"><a class="menu-link" href="' . $url . '"><div>' . $title . '</div></a>';
-                
+
                                         if ($item_sub->sub > 0) {
                                             $content .= '<ul class="sub-menu-container">';
                                             foreach ($menu as $item_sub_2) {
@@ -145,7 +145,7 @@
                                                 if ($item_sub_2->parent_id == $item_sub->id) {
                                                     $title = isset($item_sub_2->json_params->title->{$locale}) && $item_sub_2->json_params->title->{$locale} != '' ? $item_sub_2->json_params->title->{$locale} : $item_sub_2->name;
                                                     $url = $item_sub_2->url_link;
-                
+
                                                     $content .= '<li class="menu-item"><a class="menu-link" href="' . $url . '"><div>' . $title . '</div></a></li>';
                                                 }
                                             }

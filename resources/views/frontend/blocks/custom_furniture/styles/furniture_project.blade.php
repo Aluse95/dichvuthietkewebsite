@@ -31,18 +31,20 @@
             @endphp
   
             <div class="col-lg-4 col-md-6 col-sm-12 project-item">
-              <div class="project-item-img">
-                <img
-                class="lazyload" 
-                src="{{ asset('themes/frontend/f4web/images/lazyload.gif')}}" 
-                data-src="{{ $image_sub }}" alt="{{ $title_sub }}"
-                />
-                @if ($link_demo)
-                  <a href="{{ $link_demo }}" class="demo-btn">Xem Demo</a>
-                @endif
-                <a href="{{ $alias }}" class="detail-btn">Xem chi tiết</a>
+              <div class="project-wrap">
+                <div class="project-item-img">
+                  <img
+                  class="lazyload" 
+                  src="{{ asset('themes/frontend/f4web/images/lazyload.gif')}}" 
+                  data-src="{{ $image_sub }}" alt="{{ $title_sub }}"
+                  />
+                  @if ($link_demo)
+                    <a href="{{ $link_demo }}" class="demo-btn">Xem Demo</a>
+                  @endif
+                  <a href="{{ $alias }}" class="detail-btn">Xem chi tiết</a>
+                </div>
+                <a href="{{ $alias }}" class="project-item-title">{{ $title_sub }}</a>
               </div>
-              <a href="{{ $alias }}" class="project-item-title">{{ $title_sub }}</a>
             </div>
           @endforeach
         @endif
@@ -67,18 +69,20 @@
             @endphp
   
             <div class="col-lg-6 col-md-6 col-sm-6 project-item">
-              <div class="project-item-img">
-                <img
-                class="lazyload" 
-                src="{{ asset('themes/frontend/f4web/images/lazyload.gif')}}" 
-                data-src="{{ $image_sub }}" alt="{{ $title_sub }}"
-                />
-                @if ($link_demo)
-                  <a href="{{ $link_demo }}" class="demo-btn">Xem Demo</a>
-                @endif
-                <a href="{{ $alias }}" class="detail-btn">Xem chi tiết</a>
+              <div class="project-wrap">
+                <div class="project-item-img">
+                  <img
+                  class="lazyload" 
+                  src="{{ asset('themes/frontend/f4web/images/lazyload.gif')}}" 
+                  data-src="{{ $image_sub }}" alt="{{ $title_sub }}"
+                  />
+                  @if ($link_demo)
+                    <a href="{{ $link_demo }}" class="demo-btn">Xem Demo</a>
+                  @endif
+                  <a href="{{ $alias }}" class="detail-btn">Xem chi tiết</a>
+                </div>
+                <a href="{{ $alias }}" class="project-item-title">{{ $title_sub }}</a>
               </div>
-              <a href="{{ $alias }}" class="project-item-title">{{ $title_sub }}</a>
             </div>
           @endforeach
         @endif

@@ -14,72 +14,41 @@
     });
   @endphp
 
-  <style>
-    #banner {
-      background-image: url("{{ $image_background }}");
-      background-position: center top;
-      background-repeat: no-repeat;
-      background-size: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      align-items: center;
-      padding: 250px 0 0;
-    }
-  </style>
-
   <!-- START BANNE  -->
-  <div id="banner">
-    <div class="container">
-      <h1>{!! $brief !!}</h1>
-      <div class="btn-container">
-        <a href="/lien-he" class="btn-item">Đăng kí tư vấn</a>
-        <a href="{{ $url_link }}" class="btn-item">{{ $url_link_title }}</a>
-      </div>
-    </div>
-    <div class="container-fluid">
-      <div class="swiper banner-p">
-        <!-- Additional required wrapper -->
-        <div class="swiper-wrapper">
-          @if ($block_childs)
-            @foreach ($block_childs as $item)
-              @php
-                $title = $item->json_params->title->{$locale} ?? $item->title;
-                $brief = $item->json_params->brief->{$locale} ?? $item->brief;
-                $image = $item->image != '' ? $item->image : null;
-                $image_background = $item->image_background != '' ? $item->image_background : null;
-              @endphp
-
-              <div class="swiper-slide">
-                <img class="lazyload" 
-                src="{{ asset('themes/frontend/f4web/images/lazyload.gif')}}" 
-                data-src="{{ $image }}" alt="{{ $title }}" />
+      <section id="" class="slider-title slider-about-us">
+          <div class="bg_page position-relative">
+              <div class="img">
+                  <img class="d-block w-100" src="{{$image}}" alt="banner">
               </div>
-            @endforeach
-          @endif
-        </div>
-      </div>
-      <div class="swiper banner-m">
-        <!-- Additional required wrapper -->
-        <div class="swiper-wrapper">
-          @if ($block_childs)
-            @foreach ($block_childs as $item)
-              @php
-                $title = $item->json_params->title->{$locale} ?? $item->title;
-                $brief = $item->json_params->brief->{$locale} ?? $item->brief;
-                $image = $item->image != '' ? $item->image : null;
-                $image_background = $item->image_background != '' ? $item->image_background : null;
-              @endphp
-
-              <div class="swiper-slide">
-                <img class="lazyload" src="{{ asset('themes/frontend/f4web/images/lazyload.gif')}}" 
-                data-src="{{ $image }}" alt="FHM Image" />
+              <div class="content-page w-100">
+                  <div class="text-center">
+                      <h2 class="title">
+                          {{$title}}
+                      </h2>
+                      {!! $brief !!}
+                  </div>
+                  <div class="box_btn d-flex justify-content-center">
+                      <a href="/lien-he"
+                      >
+                          <button
+                              class="btn btn-primary btn-big"
+                          >
+                              Đăng ký tư vấn
+                          </button>
+                      </a
+                      >
+                      <a href="{{ $url_link }}" class=""
+                      >
+                          <button
+                              class="btn btn-secondary btn-big"
+                          >
+                              {{ $url_link_title }}
+                          </button>
+                      </a
+                      >
+                  </div>
               </div>
-            @endforeach
-          @endif
-        </div>
-      </div>
-    </div>
-  </div>
+          </div>
+      </section>
   <!-- END BANNER  -->
 @endif

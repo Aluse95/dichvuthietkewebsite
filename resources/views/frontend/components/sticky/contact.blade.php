@@ -232,11 +232,11 @@
   </div>
   <div class="card mx-auto" style="max-width: 540px">
     <div class="card-header py-3 bg-transparent center">
-      <h3 class="text-center yellow-color mb-3">ĐĂNG KÍ <br> NHẬN KHUYẾN MÃI NGAY</h3>
+      <h3 class="text-center mb-3">ĐĂNG KÍ <br> NHẬN KHUYẾN MÃI NGAY</h3>
       <p><i class="fa-solid fa-gift yellow-color"></i> Tặng <span class="yellow-color">1 tên miền </span>.com hoặc .net trị giá <span class="yellow-color">300K</span></p>
       <p><i class="fa-solid fa-gift yellow-color"></i> Tặng miễn phí <span class="yellow-color">1 năm </span>sử dụng hosting <span class="yellow-color">1Gb</span> trị giá <span class="yellow-color">1200K</span></p>
       <p><i class="fa-solid fa-gift yellow-color"></i> Tặng phần mềm <span class="yellow-color">live chat!</span></p>
-      <h3 class="text-center yellow-color">HOTLINE: {{ $web_information->social->call_now  }} </h3>
+      <h3 class="text-center">HOTLINE: {{ $web_information->social->call_now  }} </h3>
     </div>
     <div class="card-body mx-auto " style="max-width: 70%">
       <form
@@ -282,7 +282,7 @@
         </div>
 
         <div class="col-12 mt-4">
-          <button class="button w-100 m-0 py-2 mb-3 text-uppercase">
+          <button class="button w-100 m-0 py-2 mb-3 text-uppercase text-white">
             @lang('Register')
           </button>
         </div>

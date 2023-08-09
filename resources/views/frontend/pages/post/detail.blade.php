@@ -43,6 +43,9 @@
       align-items: center;
       padding: 250px 0 0;
     }
+    #img-content img {
+      max-width: 100%;
+    }
   </style>
   
   <div id="banner">
@@ -55,9 +58,9 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-9 col-sm-12">
-          <p style="text-align: justify">
+          <div id="img-content" style="text-align: justify">
             {!! $content !!}
-          </p>
+          </div>
           <div class="blog-detail-share">
             <p>@lang('Share this post'):</p>
             <div class="social">
@@ -108,16 +111,12 @@
                       </div>
                     </div>
                   @endforeach
-
                 </div>
               @endif
           </div>
         </div>
         @include('frontend.components.sidebar.post')
-        
       </div>
     </div>
   </div>
-
-  {{-- End content --}}
 @endsection

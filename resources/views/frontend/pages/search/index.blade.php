@@ -40,9 +40,6 @@
       width: fit-content;
       border-radius: 30px;
     }
-    #project .project-wrap {
-      border: 1px solid var(--blue-4);
-    }
     #project .project-item-img {
       border: none;
       border-radius: 16px;

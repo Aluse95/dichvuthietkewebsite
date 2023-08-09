@@ -136,17 +136,17 @@
   color: #fff;
   font-size: 14px;
   margin-top: 50px;
-  background-color: rgb(238, 66, 66);
+  background-color: #034a98;
 }
 .yellow-color {
-  color: #f0fc07;
+  color: #ff7b34;
 }
 .card .card-header p {
   margin-left: 30px;
 }
 #modal-sign-up button {
   border: none;
-  background-color: #f0fc07;
+  background-color: #ff7b34;
   border-radius: 10px;
 }
 #modal-sign-up .button-close {
@@ -155,6 +155,6 @@
   position: absolute;
 }
 #modal-sign-up .button-close:hover {
-  color: #f0fc07;
+  color: #ff7b34;
   cursor: pointer;
 }

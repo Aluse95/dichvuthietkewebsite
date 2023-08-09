@@ -802,8 +802,8 @@ a {
 
 /* START PROJECT */
 #project {
-  margin-top: 80px;
-  background-color: #fff;
+  padding: 50px 0;
+  background-color: rgb(212, 233, 253);
 }
 #project .project-wrap {
   background-color: #fff;
@@ -848,7 +848,7 @@ a {
   width: fit-content;
   height: 500px;
   overflow: hidden;
-  border: 1px solid var(--blue-4);
+  border: none;
   margin-bottom: 20px;
   border-radius: 10px;
   transition: all ease 0.3s;

@@ -279,14 +279,14 @@
 }
 
 #people .people-leader-img-text .name {
-  font-size: 25px;
+  font-size: 20px;
   text-transform: capitalize;
 }
 
 #people .people-leader-img-text p {
   margin: 5px 0;
   color: #fff;
-  font-size: 20px;
+  font-size: 17px;
   font-weight: 500;
 }
 

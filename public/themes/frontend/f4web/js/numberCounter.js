@@ -1,5 +1,5 @@
 const counters = document.querySelectorAll(
-  "#reason .reason-number-container .number"
+  "#reason .number"
 );
 
 counters.forEach((counter) => {

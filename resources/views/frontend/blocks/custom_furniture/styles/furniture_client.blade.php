@@ -19,6 +19,11 @@
       font-weight: 600;
       text-transform: unset;
     }
+    .client-img {
+      overflow: hidden;
+      border-radius: 10px;
+      border: 1px solid #ddd;
+    }
   </style>
 
   <div id="client-home">

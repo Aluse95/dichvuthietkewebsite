@@ -9,134 +9,60 @@
     $url_link = $block->url_link != '' ? $block->url_link : '';
     $url_link_title = $block->json_params->url_link_title->{$locale} ?? $block->url_link_title;
     $style = isset($block->json_params->style) && $block->json_params->style == 'slider-caption-right' ? 'd-none' : '';
-    
+
     // Filter all blocks by parent_id
     $block_childs = $blocks->filter(function ($item, $key) use ($block) {
         return $item->parent_id == $block->id;
     });
     $id = $block_childs->first()->id;
   @endphp
-
+<style>
+    .box-service:hover .icon img{
+        filter: brightness(0) invert(1);
+        -webkit-filter: brightness(0) invert(1);
+    }
+</style>
   <!-- START SERVICE -->
-  <div id="service">
-    <img src="{{ $image_background }}" alt="service-bg" />
-    <h2><i class="{{ $icon }}"></i>{{ $title }}</h2>
-    <div class="container g-0">
-      <div class="service-container">
-        <div class="service-tag-container">
-          <div class="service-tag-item-smooth-container">
-            <div class="service-tag-item-smooth-left"></div>
-            <div class="service-tag-item-smooth-right"></div>
-          </div>
-          @if (isset($block_childs))
-            @foreach ($block_childs as $item)
-              @php
-                $title_sub = $item->json_params->title->{$locale} ?? $item->title;
-                $active = $item->id == $id ? 'active' : '';
-              @endphp
-              
-              <div class="service-tag-item {{ $active }}">
-                <p>{{ $title_sub }}</p>
+      <section id="service" class="services">
+          <div class="container">
+              <div class="v-title text-center">
+                  <div class="box-title">
+                      <span>/</span>
+                      <span>Services</span>
+                  </div>
+                  <h2 class="title">
+                      {{ $title }}
+                  </h2>
               </div>
-            @endforeach
-          @endif
-        </div>
-        <div class="service-card-container">
-          @if (isset($block_childs))
-            @foreach ($block_childs as $item)
-              @php
-                $title_sub = $item->json_params->title->{$locale} ?? $item->title;
-                $brief_sub = $item->json_params->brief->{$locale} ?? $item->brief;
-                $image_sub = $item->image != '' ? $item->image : null;
-                $content_sub = $item->json_params->content->{$locale} ?? $item->content;
-                $url_link = $item->url_link != '' ? $item->url_link : 'javascript:void(0)';
-                $url_link_title = $item->json_params->url_link_title->{$locale} ?? $item->url_link_title;
-              @endphp
-
-              <div class="service-card-item">
-                <div class="service-card-item-img">
-                  <img src="{{ $image_sub }}" alt="{{ $title_sub }}"/>
-                </div>
-                <div class="service-card-item-content">
-                  <h3>{{ $title_sub }}</h3>
-                  <ul>
-                    {!! $content_sub !!}
-                  </ul>
-                  @if (isset($web_information->social->call_now) && $web_information->social->call_now != '')
-                  <a href="tel:{{ $web_information->social->call_now }}"  rel="nofollow" class="button"
-                    >{{ $url_link_title }} <i class="fa-solid fa-arrow-right"></i>
-                  </a>
+              <div class="service-list d-flex flex-wrap align-items-center justify-content-lg-center">
+                  @if (isset($block_childs))
+                      @foreach ($block_childs as $item)
+                          @php
+                              $title_sub = $item->json_params->title->{$locale} ?? $item->title;
+                                  $brief_sub = $item->json_params->brief->{$locale} ?? $item->brief;
+                                  $image_sub = $item->image != '' ? $item->image : null;
+                                  $content_sub = $item->json_params->content->{$locale} ?? $item->content;
+                                  $url_link = $item->url_link != '' ? $item->url_link : 'javascript:void(0)';
+                                  $url_link_title = $item->json_params->url_link_title->{$locale} ?? $item->url_link_title;
+                          @endphp
+                  <div class="service-list__item col-12 col-lg-4 mb-5 mb-lg-0">
+                      <div class="box-service text-center bora-10">
+                          <div class="icon">
+                              <img src="{{ $image_sub }}" alt="{{ $title_sub }}">
+                          </div>
+                          <h3 class="title text-center text-uppercase">
+                              {{ $title_sub }}
+                          </h3>
+                          <div class="content">
+                              {!! $content_sub !!}
+                          </div>
+                      </div>
+                  </div>
+                      @endforeach
                   @endif
-                </div>
               </div>
-            @endforeach
-          @endif
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- Mobile Service -->
-  <div id="m-service">
-    <img src="{{ $image_background }}" alt="service-bg" />
-    <h2>
-      <i class="{{ $icon }}"></i>
-      <span>{{ $title }}</span> 
-    </h2>
-    <div class="container">
-      <div class="service-container">
-        <div class="service-tag-container">
-          <div class="row">
-            @if (isset($block_childs))
-              @foreach ($block_childs as $item)
-                @php
-                  $title_sub = $item->json_params->title->{$locale} ?? $item->title;
-                  $active = $item->id == $id ? 'active' : '';
-                  $col = $item->iorder == 3 ? 'col-12' : 'col-6'
-                @endphp
-                
-                <div class="{{ $col }} service-tag-item d-flex justify-content-center {{ $active }}">
-                  <p>{{ $title_sub }}</p>
-                </div>
-              @endforeach
-            @endif
           </div>
-        </div>
-        <div class="service-card-container">
-          @if (isset($block_childs))
-            @foreach ($block_childs as $item)
-              @php
-                $title_sub = $item->json_params->title->{$locale} ?? $item->title;
-                $brief_sub = $item->json_params->brief->{$locale} ?? $item->brief;
-                $image_sub = $item->image != '' ? $item->image : null;
-                $content_sub = $item->json_params->content->{$locale} ?? $item->content;
-                $url_link = $item->url_link != '' ? $item->url_link : 'javascript:void(0)';
-                $url_link_title = $item->json_params->url_link_title->{$locale} ?? $item->url_link_title;
-                $active = $item->id == $id ? 'active' : '';
-              @endphp
-
-              <div class="service-card-item {{ $active }}">
-                <div class="service-card-item-img">
-                  <img src="{{ $image_sub }}" alt="{{ $title_sub }}"/>
-                </div>
-                <div class="service-card-item-content">
-                  <h3>{{ $title_sub }}</h3>
-                  <ul>
-                    {!! $content_sub !!}
-                  </ul>
-                  @if (isset($web_information->social->call_now) && $web_information->social->call_now != '')
-                  <a href="tel:{{ $web_information->social->call_now }}"  rel="nofollow" class="button"
-                    >{{ $url_link_title }} <i class="fa-solid fa-arrow-right"></i>
-                  </a>
-                  @endif
-                </div>
-              </div>
-            @endforeach
-          @endif
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- Mobile Service -->
+      </section>
   <!-- END SERVICE -->
 
 @endif
