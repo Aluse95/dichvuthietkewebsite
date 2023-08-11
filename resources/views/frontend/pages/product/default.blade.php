@@ -55,7 +55,7 @@ $page_description = $taxonomy->json_params->description->{$locale} ?? $page->des
     <section id="banner" class="slider-title">
     <div class="bg_page position-relative">
         <div class="img">
-            <img class="d-block w-100" src="{{ asset('themes/frontend/website-service/images/bg_blog.jpg')}}" alt="banner">
+            <img class="d-block w-100" src="{{ asset('themes/frontend/website-service/images/bg_portfolios.jpg')}}" alt="banner">
         </div>
         <div class="container">
             <div class="content-page">

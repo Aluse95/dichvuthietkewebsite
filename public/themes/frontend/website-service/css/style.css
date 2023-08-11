@@ -1028,7 +1028,7 @@ a, a:hover {
     margin: 0;
 }
 
-.news-list .title a {
+.news-list .content h3.title {
     color: #000;
     font-size: 20px;
     font-weight: 500;
@@ -1898,6 +1898,12 @@ a, a:hover {
     gap: 40px;
 }
 
+.blog-detail .sidebar{
+    position: absolute;
+    top: -4%;
+    right: 0;
+}
+
 .blog-category__button .box_btn .btn {
     font-size: 16px;
     white-space: nowrap;
@@ -1923,8 +1929,9 @@ a, a:hover {
 
 .blog-category {
     padding-left: 25px;
-    position: absolute;
-    top: -11%;
+    padding-bottom: 26px;
+    /*position: absolute;*/
+    /*top: -5.1%;*/
     background: #fff;
     border-radius: 10px;
 }
@@ -1947,15 +1954,15 @@ a, a:hover {
 
 .blog-news__item .img img {
     max-height: 156px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
 }
 
 .blog-news .title {
-    line-height: 20px;
-}
-
-.blog-news .title a {
     color: #000;
     font-size: 16px;
+    line-height: 20px;
     font-style: normal;
     font-weight: 500;
 }
@@ -1999,6 +2006,11 @@ a, a:hover {
 
 .box-content-two .col-12{
     padding-left: 37%;
+}
+
+#price-table-web{
+    max-width: 1264px;
+    margin: 0 auto;
 }
 
 /*end VanHt*/
@@ -3690,7 +3702,7 @@ a p {
         padding: 5px 7px;
     }
 
-    .news-list .title a {
+    .news-list h3.title {
         font-size: 18px;
         line-height: 25px;
     }

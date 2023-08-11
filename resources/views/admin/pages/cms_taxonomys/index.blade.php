@@ -215,7 +215,7 @@
                             </td>
                             @php
                               $url_mapping = App\Helpers::generateRoute($sub->taxonomy, $row->title, $sub->id, null, $sub->title);
-                              
+
                             @endphp
                             <td>
                               <a target="_new" href="{{ $url_mapping }}" data-toggle="tooltip"
@@ -268,7 +268,8 @@
                                   {{ __(App\Consts::TAXONOMY[$sub_child->taxonomy]) }}
                                 </td>
                                 @php
-                                  $url_mapping = App\Helpers::generateRoute($sub_child->taxonomy, $sub_child->title, $sub_child->id);
+
+                                  $url_mapping = App\Helpers::generateRoute($sub_child->taxonomy, $sub->title, $sub_child->id,null ,$sub_child->title);
                                 @endphp
                                 <td>
                                   <a target="_new" href="{{ $url_mapping }}" data-toggle="tooltip"

@@ -25,7 +25,9 @@
                       <h2 class="title">
                           {{$title}}
                       </h2>
-                      {!! $brief !!}
+                      <p class="d-md-block d-none text-center">
+                          {!! $brief !!}
+                      </p>
                   </div>
                   <div class="box_btn d-flex justify-content-center">
                       <a href="/lien-he"

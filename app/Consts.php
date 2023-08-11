@@ -237,6 +237,10 @@ class Consts
                 [
                     "title" => "Dịch vụ Content",
                     "name" => "page.service_content"
+                ],
+                [
+                    "title" => "Dịch vụ",
+                    "name" => "page.service"
                 ]
             ],
             "show_route" => true,

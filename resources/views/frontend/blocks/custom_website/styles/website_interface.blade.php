@@ -8,35 +8,45 @@
     });
   @endphp
 
-  <div id="interface">
-    <div class="container">
-      <h2>{{ $title }}</h2>
-      <p>
-        {{ $brief }}
-      </p>
-      <div class="row">
-        @if ($block_childs)
-          @foreach ($block_childs as $item)
-            @php
-              $title_sub = $item->json_params->title->{$locale} ?? $item->title;
-              $content_sub = $item->json_params->content->{$locale} ?? $item->content;
-              $icon_sub = $item->icon != '' ? $item->icon : null;
-            @endphp
-
-            <div class="col-lg-3 col-md-6 col-sm-12">
-              <div class="interface-item">
-                <i class="{{ $icon_sub }}"></i>
-                <div class="interface-item-text">
-                  <h3>{{ $title_sub }}</h3>
-                  <p>
-                    {{ $content_sub }}
-                  </p>
-                </div>
+  <section id="interface" class="interface">
+      <div class="content">
+          <div class="text-center">
+              <div class="v-title">
+                  <h2 class="title">
+                      {{ $title }}
+                  </h2>
               </div>
-            </div>
-          @endforeach
-        @endif
+              <div class="box-description">
+                  <p>
+                    {!! $brief !!}}
+                  </p>
+              </div>
+          </div>
+          <div class="row box-values">
+              @if ($block_childs)
+                  @foreach ($block_childs as $item)
+                      @php
+                          $title_sub = $item->json_params->title->{$locale} ?? $item->title;
+                          $content_sub = $item->json_params->content->{$locale} ?? $item->content;
+                          $icon_sub = $item->icon != '' ? $item->icon : null;
+                          $image_child = $item->image != '' ? $item->image : null;
+                      @endphp
+                      <div class="box-values__item col-lg-3 col-md-6 col-12">
+                          <div class="title">{{ $title_sub }}</div>
+                          <div class="box-desc pt-3">
+                              <p>
+                                  {!! $content_sub !!}
+                              </p>
+                          </div>
+                          <div class="img">
+                              <div class="text-center">
+                                  <img src="{{$image_child}}" alt="Thấu hiểu">
+                              </div>
+                          </div>
+                      </div>
+                  @endforeach
+              @endif
+          </div>
       </div>
-    </div>
-  </div>
+  </section>
 @endif

@@ -11,7 +11,7 @@
 <link rel="stylesheet" href="{{ asset('themes/frontend/f4web/css/custom.css?v=1.1') }}" type="text/css" />
 {{--<link rel="stylesheet" href="{{ asset('themes/frontend/f4web/css/introduce.css') }}" type="text/css" />--}}
 {{--<link rel="stylesheet" href="{{ asset('themes/frontend/f4web/css/contact.css') }}" type="text/css" />--}}
-<link rel="stylesheet" href="{{ asset('themes/frontend/f4web/css/blog-category.css') }}" type="text/css" />
+{{--<link rel="stylesheet" href="{{ asset('themes/frontend/f4web/css/blog-category.css') }}" type="text/css" />--}}
 <link rel="stylesheet" href="{{ asset('themes/frontend/f4web/css/blog-detail.css') }}" type="text/css" />
 <link rel="stylesheet" href="{{ asset('themes/frontend/f4web/css/template-detail.css') }}" type="text/css" />
 <link rel="stylesheet" href="{{ asset('themes/frontend/f4web/css/swiper.min.css') }}" type="text/css" />

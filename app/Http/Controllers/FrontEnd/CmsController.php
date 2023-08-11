@@ -65,20 +65,18 @@ class CmsController extends Controller
                     ->where('taxonomy', Consts::TAXONOMY['tags'])
                     ->where('is_featured', 1)
                     ->get();
-
-                return $this->responseView('frontend.pages.post.category');
+                    return $this->responseView('frontend.pages.post.category');
             } else {
                 return redirect()->back()->with('errorMessage', __('not_found'));
             }
         } else {
             // Check không có danh mục con
             $params['alias'] = $alias_category;
-
             $params['status'] = Consts::POST_STATUS['active'];
 
             // Check if is taxonomy
             $taxonomy = ContentService::getCmsTaxonomy($params)->first();
-            
+
             if ($taxonomy) {
                 // Check if is has parent
                 if ($taxonomy->parent_id > 0) {
@@ -100,8 +98,7 @@ class CmsController extends Controller
                     ->where('taxonomy', Consts::TAXONOMY['tags'])
                     ->where('is_featured', 1)
                     ->get();
-
-                return $this->responseView('frontend.pages.post.category');
+                return $this->responseView('frontend.pages.post.default');
             }
 
             // Check when is detail post or product
