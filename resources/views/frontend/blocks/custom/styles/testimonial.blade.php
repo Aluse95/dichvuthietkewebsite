@@ -14,6 +14,18 @@
         return $item->parent_id == $block->id;
     });
   @endphp
+  <style>
+      .owl-carousel .owl-item {
+          transition: opacity 0.3s ease-in-out;
+      }
+      .owl-carousel .owl-item.fadeout {
+          opacity: 0.3;
+      }
+      .owl-carousel .owl-item.fadein {
+          opacity: 1;
+      }
+
+  </style>
 
   <section id="testimonials" class="our-testimonials">
       <div class="wrapper">
@@ -26,7 +38,7 @@
                   {!! $title !!}
               </h2>
           </div>
-          <div class="carousel-news">
+          <div class="owl-carousel carousel-news">
               @if ($block_childs)
                   @foreach ($block_childs as $item)
                       @php
@@ -39,7 +51,7 @@
                           $icon = $item->icon != '' ? $item->icon : '';
                           $style = $item->json_params->style ?? '';
                       @endphp
-              <div class="slider-item">
+              <div class="item">
                   <div class="card">
                       <div class="col-4 pr-0">
                           <img src="{{$image_child}}">

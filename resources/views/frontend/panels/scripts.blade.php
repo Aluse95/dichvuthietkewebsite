@@ -1,17 +1,17 @@
 {{-- <div id="gotoTop" class="icon-angle-up"></div> --}}
 <button onclick="topFunction()" id="myBtn"><i class="fa-solid fa-chevron-up"></i></button>
 
-<script src="{{ asset('themes/frontend/f4web/js/bootstrap.min.js') }}"></script>
-<script src="{{ asset('themes/frontend/f4web/js/swiper-bundle.min.js') }}"></script>
+{{--<script src="{{ asset('themes/frontend/f4web/js/bootstrap.min.js') }}"></script>--}}
+{{--<script src="{{ asset('themes/frontend/f4web/js/swiper-bundle.min.js') }}"></script>--}}
 <script src="{{ asset('themes/frontend/f4web/js/lazysizes.min.js') }}"></script>
-<script default src="{{ asset('themes/frontend/f4web/js/app.js') }}"></script>
+{{--<script default src="{{ asset('themes/frontend/f4web/js/app.js') }}"></script>--}}
 <script default src="{{ asset('themes/frontend/f4web/js/service.js') }}"></script>
 <script default src="{{ asset('themes/frontend/f4web/js/faq.js') }}"></script>
 <script default src="{{ asset('themes/frontend/f4web/js/numberCounter.js') }}"></script>
 <script default src="{{ asset('themes/frontend/f4web/js/circleContent.js') }}"></script>
 {{--<script default src="{{ asset('themes/frontend/f4web/js/searchModal.js') }}"></script>--}}
-<script default src="{{ asset('themes/frontend/f4web/js/footer.js') }}"></script>
-<script default src="{{ asset('themes/frontend/f4web/js/header.js') }}"></script>
+{{--<script default src="{{ asset('themes/frontend/f4web/js/footer.js') }}"></script>--}}
+{{--<script default src="{{ asset('themes/frontend/f4web/js/header.js') }}"></script>--}}
 
 {{--Vanht--}}
 <script src="{{ asset('themes/frontend/website-service/js/all.min.js') }}"></script>
@@ -22,6 +22,11 @@
 <script src="{{ asset('themes/frontend/website-service/js/jquery.magnific-popup.min.js') }}"></script>
 <script src="{{ asset('themes/frontend/website-service/js/slick.min.js') }}"></script>
 <script src="{{ asset('themes/frontend/website-service/js/main.js') }}"></script>
+<script src="{{ asset('themes/frontend/website-service/js/carousel-slide.js') }}"></script>
+<script src="{{ asset('themes/frontend/website-service/js/owl.carousel.min.js') }}"></script>
+
+
+
 
 <script default>
   $(function() {

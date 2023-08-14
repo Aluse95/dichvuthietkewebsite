@@ -25,7 +25,7 @@
                   {{ $title }}
               </h2>
           </div>
-          <div class="customer-logos slider">
+          <div class="owl-carousel customer-logos">
               @if ($block_childs)
                   @foreach ($block_childs as $item)
                       @php
@@ -37,7 +37,7 @@
                           $icon = $item->icon != '' ? $item->icon : '';
                           $style = $item->json_params->style ?? '';
                       @endphp
-                      <div class="slide">
+                      <div class="item">
                           <img class="lazyload" src="{{ asset('themes/frontend/f4web/images/lazyload.gif')}}"
                                data-src="{{ $image }}" alt="{{ $title }}"/>
                       </div>

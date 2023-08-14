@@ -12,6 +12,7 @@
     margin: auto;
 }
 
+
 .full-width {
     width: 100vw; /* 100% chiều ngang của viewport */
     /*margin-left: calc(-50vw + 50%); !* Để căn giữa theo chiều ngang *!*/
@@ -894,9 +895,15 @@ a, a:hover {
     gap: 38px 40px
 }
 
-.category-list .category-list__item .img{
+
+.category-list .category-list__item:hover .img img, .category-list .category-list__item:hover .img-animation img{
+    transform: scale(1.15); /* Tăng kích thước ảnh khi hover */
+}
+
+.category-list .category-list__item .img, .category-list .category-list__item .img-animation{
     border-radius: 10px;
     height: 200px;
+    overflow: hidden;
 }
 
 #project .category-list .category-list__item img {
@@ -908,6 +915,7 @@ a, a:hover {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: transform 0.3s, filter 0.3s;
 }
 
 .category-list .category-list__item .title {
@@ -915,6 +923,11 @@ a, a:hover {
     line-height: 19px;
     letter-spacing: 0.8px;
     padding-top: 24px;
+    transition: color 0.3s;
+}
+
+.category-list .category-list__item:hover .title{
+    color: #364CC3; /* Đổi màu chữ khi hover */
 }
 
 .category .template-detail-button {
@@ -1134,14 +1147,11 @@ a, a:hover {
     padding: 105px 0 157px;
 }
 
-.customer-logos .slick-track {
+.customer-logos .item{
     display: flex;
     align-items: center;
-    padding-top: 53px;
-}
-
-.customer-logos .slick-slide {
-    padding: 0 20px;
+    justify-content: center;
+    height: 122px;
 }
 
 .logo-footer img {
@@ -2007,11 +2017,103 @@ a, a:hover {
 .box-content-two .col-12{
     padding-left: 37%;
 }
+/*CSS PRICE TABLE */
 
 #price-table-web{
     max-width: 1264px;
     margin: 0 auto;
 }
+#price-table-web h2{
+    padding-bottom: 90px;
+}
+
+.service-price table th, table td{
+    border-top: 1px solid #E8E8E8;
+}
+.service-price .table th, .table td{
+    border: 1px solid #E8E8E8;
+}
+
+.service-price table thead th {
+ padding: 38px 0 28px;
+ border-radius: 10px 10px 0px 0px;
+    text-align: center;
+}
+
+.service-price table thead th p:first-child{
+    padding-bottom: 25px;
+}
+
+.service-price table thead th:nth-child(3){
+    background: #364CC3;
+    border: #364CC3;
+    transform-origin: bottom center;
+    transform: scaleY(1.1);
+}
+
+
+.service-price table thead th:nth-child(3) p, .service-price table thead th:nth-child(3) p.price{
+    color: #FFFFFF;
+}
+
+.service-price table td {
+    height: 60px;
+    vertical-align: middle;
+    color: #000;
+    font-size: 16px;
+    font-weight: 400;
+}
+.service-price table thead th p{
+    color: #9A9A9A;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 19px;
+}
+.service-price table thead th p.contact{
+    font-size: 18px;
+    padding: 10px 0;
+    background: #364CC3;
+    border-radius: 200px;
+    color: #fff;
+    max-width: 149px;
+    margin: 0 auto;
+}
+
+.service-price table thead th p.price {
+    color: #000000;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.service-price th:nth-child(1) {
+    border: none;
+}
+
+.service-price td:nth-child(1) {
+    font-weight: 300;
+}
+
+.service-price th:nth-child(1), td:nth-child(1) {
+    width: 26%;
+    text-align: left;
+}
+
+.service-price th:nth-child(2), td:nth-child(2) {
+    width: 18%;
+}
+
+.service-price th:nth-child(3), td:nth-child(3) {
+    width: 20%;
+}
+.service-price th:nth-child(4), td:nth-child(2) {
+    width: 18%;
+}
+
+.service-price th:nth-child(5), td:nth-child(5) {
+    width: 28%;
+}
+/* END CSS PRICE TABLE */
+
 
 /*end VanHt*/
 .our-projects .template-detail-button {
@@ -2024,34 +2126,38 @@ a, a:hover {
     border-radius: 10px;
     object-fit: cover;
     position: relative;
+    object-position: center top;
 }
 
-.our-projects .clip {
-    overflow: hidden;
-    bottom: 0;
-}
 
-.our-projects .center .slick-track {
-    display: flex;
-    align-items: center;
-}
-
-.center .slide-item.slick-slide.slick-current.slick-active.slick-center {
-    transform: scale(1.0);
+.our-projects .center .item {
     opacity: 1;
+    transform: scalex(1);
 
 }
 
-.center .slide-item.slick-slide {
+.our-projects .owl-carousel .owl-item img {
+    width: 100%; /* Chiều rộng đầy đủ */
+    height: auto; /* Chiều cao tự động điều chỉnh */
+    transition: transform 0.3s ease-in-out;
+}
+
+.fadeout {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.our-projects .center .owl-carousel .owl-item:not(.center) {
+    width: 50vw;
     opacity: 0.5;
-    transition: all 300ms ease;
+    transition: transform 0.3s ease-in-out;
     bottom: 0;
-    transform: scale(0.85);
+    transform: scaleY(0.9);
 }
 
-.center img {
+.our-projects .center img {
     max-height: 718px;
-    max-width: 683px;
+    max-width: 100%;
 }
 
 /*slick center*/
@@ -2168,7 +2274,8 @@ a, a:hover {
     flex-direction: row;
     align-items: center;
     height: 411px;
-    max-width: 335px;
+    max-height: 411px;
+    /*max-width: 335px;*/
 }
 
 .carousel-news .card-body {
@@ -2362,7 +2469,7 @@ a, a:hover {
 
 .our-testimonials .slick-next {
     top: 45%;
-    right: 23%;
+    right: 19%;
 }
 
 .our-testimonials .slick-prev {

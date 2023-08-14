@@ -23,7 +23,7 @@
             <div class="col-12 col-lg-5 img pl-lg-0">
                 <div class="item_video">
                     <div class="frame">
-                        <iframe width="411" height="411"
+                        <iframe width="100%" height="411"
                                 src="https://www.youtube.com/embed/ERKM3OTLfb4"
                                 title="YouTube video player" frameborder="0"
                                 class="rounded-circle"

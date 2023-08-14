@@ -30,8 +30,9 @@
 <link rel="stylesheet" href="{{ asset('themes/frontend/website-service/css/slick.css') }}" type="text/css" />
 <link rel="stylesheet" href="{{ asset('themes/frontend/website-service/css/slick-theme.css') }}" type="text/css" />
 <link rel="stylesheet" href="{{ asset('themes/frontend/website-service/css/style.css') }}" type="text/css" />
-
-
+ <!-- Các thẻ khác -->
+<link rel="stylesheet" href="{{ asset('themes/frontend/website-service/css/owl.carousel.min.css') }}">
+<link rel="stylesheet" href="{{ asset('themes/frontend/website-service/css/owl.theme.default.min.css') }}">
 
 <style>
   #banner .swiper-slide img {

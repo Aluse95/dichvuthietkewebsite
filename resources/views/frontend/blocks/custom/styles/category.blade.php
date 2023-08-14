@@ -29,7 +29,7 @@
                       {{ $title }}
                   </h2>
               </div>
-              <div class="category-list row">
+              <div id="categoryList" class="category-list row">
                   @foreach ($taxonomys as $item)
                       @php
                           $title = $item->json_params->title->{$locale} ?? $item->title;
@@ -42,6 +42,8 @@
                           $alias_category = App\Helpers::generateRoute(App\Consts::TAXONOMY['product'], $item->alias ?? $title, $item->id);
                       @endphp
                   <div class="category-list__item col-4 col-lg-20">
+                      <a href="{{ $alias_category }}" class="category-item">
+
                       <div class="content text-center">
                           <div class="img">
                               <img class="img-fluid w-100 h-100 lazyload"
@@ -51,15 +53,14 @@
                               {{ $title }}
                           </p>
                       </div>
+                      </a>
                   </div>
                   @endforeach
               </div>
               <div class="template-detail-button text-center">
-                  <a href="#" class="nav-link">
-                      <button class="btn btn-primary btn-medium">
+                      <button id="loadMoreButton" class="btn btn-primary btn-medium">
                           Xem toàn bộ Ngành hàng
                       </button>
-                  </a>
               </div>
           </div>
       </section>

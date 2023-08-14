@@ -34,8 +34,8 @@
                       </h2>
                   </div>
                   <div class="content">
-                      <div class="box_slick">
-                          <div class="slider center">
+                      <div class="carousel-wrap center">
+                                  <div class="owl-carousel owl-carousel-project">
                               @foreach ($rows as $item)
                                   @php
                                       $title = $item->json_params->title->{$locale} ?? $item->title;
@@ -47,7 +47,7 @@
                                       $alias = route(App\Consts::ROUTE_POST['product'], ['alias_category' => $item->alias ?? Str::slug($item->title)]);
                                   @endphp
 
-                                  <div class="slide-item">
+                                  <div class="item">
                                   <div class="position-relative">
                                       <img class="lazyload"  src="{{ asset('themes/frontend/f4web/images/lazyload.gif')}}"
                                            data-src="{{ $image }}" alt="{{ $title }}" />
@@ -58,8 +58,8 @@
                               </div>
 
                               @endforeach
-                          </div>
-                      </div>
+                                  </div>
+                              </div>
                   </div>
               </div>
               <div class="template-detail-button text-center">
@@ -73,3 +73,5 @@
       </div>
   </section>
 @endif
+<script>
+</script>

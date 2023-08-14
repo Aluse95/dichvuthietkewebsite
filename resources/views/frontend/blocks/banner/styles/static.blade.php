@@ -37,7 +37,7 @@
 
     <div id="banner">
         <section id="slider" class="slider-top">
-            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
                         <img class="d-block banner-top" src="{{asset('themes/frontend/website-service/images/banner-top.jpg')}}" alt="First slide">
@@ -73,8 +73,87 @@
                                 </div>
                             </div>
                         </div>
+
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block banner-top" src="{{asset('themes/frontend/website-service/images/banner-top.jpg')}}" alt="First slide">
+                        <div class="container">
+                            <div class="carousel-caption w-100">
+                                <div class="bg_page">
+                                    <div class="lg-md-6 pl-0">
+                                        <h2 class="title">
+                                            {{$title}}
+                                        </h2>
+                                        <p class="d-md-block d-none">{!! $brief !!}
+                                        </p>
+                                        <div class="box_btn d-flex">
+                                            <a href="/lien-he" class=""
+                                            >
+                                                <button
+                                                    class="btn btn-primary btn-big"
+                                                >
+                                                    Đăng ký tư vấn
+                                                </button>
+                                            </a
+                                            >
+                                            <a href="{{ $url_link }}" class=""
+                                            >
+                                                <button
+                                                    class="btn btn-secondary btn-big"
+                                                >
+                                                    {{ $url_link_title }}                                                </button>
+                                            </a
+                                            >
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block banner-top" src="{{asset('themes/frontend/website-service/images/banner-top.jpg')}}" alt="First slide">
+                        <div class="container">
+                            <div class="carousel-caption w-100">
+                                <div class="bg_page">
+                                    <div class="lg-md-6 pl-0">
+                                        <h2 class="title">
+                                            {{$title}}
+                                        </h2>
+                                        <p class="d-md-block d-none">{!! $brief !!}
+                                        </p>
+                                        <div class="box_btn d-flex">
+                                            <a href="/lien-he" class=""
+                                            >
+                                                <button
+                                                    class="btn btn-primary btn-big"
+                                                >
+                                                    Đăng ký tư vấn
+                                                </button>
+                                            </a
+                                            >
+                                            <a href="{{ $url_link }}" class=""
+                                            >
+                                                <button
+                                                    class="btn btn-secondary btn-big"
+                                                >
+                                                    {{ $url_link_title }}                                                </button>
+                                            </a
+                                            >
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
+{{--                <button class="carousel-control-prev" type="button" data-target="#carouselExampleControls" data-slide="prev">--}}
+{{--                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>--}}
+{{--                    <span class="sr-only">Previous</span>--}}
+{{--                </button>--}}
+{{--                <button class="carousel-control-next" type="button" data-target="#carouselExampleControls" data-slide="next">--}}
+{{--                    <span class="carousel-control-next-icon" aria-hidden="true"></span>--}}
+{{--                    <span class="sr-only">Next</span>--}}
+{{--                </button>--}}
             </div>
         </section>
     </div>

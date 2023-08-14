@@ -12,46 +12,6 @@ $page_description = $taxonomy->json_params->description->{$locale} ?? $page->des
 @endphp
 
 @section('content')
-    <style>
-        .category-item .img img {
-            transition: transform 0.3s, filter 0.3s;
-        }
-
-        .category-item p.title {
-            transition: color 0.3s;
-        }
-
-        .category-item:hover .img img {
-            transform: scale(1.15); /* Tăng kích thước ảnh khi hover */
-            /*filter: brightness(0.8); !* Điều chỉnh độ sáng của ảnh *!*/
-        }
-
-
-        .category-item .img  {
-            overflow: hidden;
-        }
-
-        .category-item:hover p.title {
-            color: #364CC3; /* Đổi màu chữ khi hover */
-        }
-        /*#project .img:hover {*/
-        /*    transform: translateY(-10px);*/
-        /*    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);*/
-        /*}*/
-        /*#project .img:hover img {*/
-        /*    transform: translateY(-80%);*/
-        /*    transition: all linear 8s;*/
-        /*}*/
-        /*#project .img {*/
-        /*    overflow: hidden;*/
-        /*    transition: all ease 0.3s;*/
-        /*    position: relative;*/
-        /*}*/
-        /*#project .img img {*/
-        /*    width: 100%;*/
-        /*    transition: all cubic-bezier(0.77, 0, 0.175, 1) 2s;*/
-        /*}*/
-    </style>
     <section id="banner" class="slider-title">
     <div class="bg_page position-relative">
         <div class="img">
