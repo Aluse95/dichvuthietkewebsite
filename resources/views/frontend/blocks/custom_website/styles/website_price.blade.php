@@ -41,7 +41,7 @@
       }
   </style>
 
-  <div id="price-table-web" class="">
+  <div id="price-table-web" class="d-lg-block d-none">
     <div class="text-center">
       <h2>{{ $title }}</h2>
       <div class="service-price">
