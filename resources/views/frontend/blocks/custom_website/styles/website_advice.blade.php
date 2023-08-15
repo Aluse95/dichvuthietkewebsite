@@ -12,12 +12,12 @@
   @endphp
 
   <div id="advice">
-    <div class="container">
-      <h2>{{ $title }}</h2>
-      <p>
-        {{ $brief }}
-      </p>
-      <div class="row">
+    <div class="">
+{{--      <h2>{{ $title }}</h2>--}}
+{{--      <p>--}}
+{{--        {{ $brief }}--}}
+{{--      </p>--}}
+      <div class="d-flex box-advice">
         @if ($block_childs)
           @foreach ($block_childs as $item)
             @php
@@ -29,13 +29,17 @@
 
             <div class="col-lg-6 col-sm-12">
               <div class="advice-item">
-                <div class="advice-item-img">
-                  <img class="lazyload" 
-                  src="{{ asset('themes/frontend/f4web/images/lazyload.gif')}}" 
-                  data-src="{{ $image_sub }}" alt="{!! $title_sub !!}" />
-                </div>
+{{--                <div class="advice-item-img">--}}
+{{--                  <img class="lazyload" --}}
+{{--                  src="{{ asset('themes/frontend/f4web/images/lazyload.gif')}}" --}}
+{{--                  data-src="{{ $image_sub }}" alt="{!! $title_sub !!}" />--}}
+{{--                </div>--}}
                 <div class="advice-item-text">
-                  <h3>{!! $title_sub !!}</h3>
+                    <div class="v-title">
+                        <h2 class="title">
+                            {!! $title_sub  !!}
+                        </h2>
+                    </div>
                   <ul>
                     {!! $content_sub !!}
                   </ul>

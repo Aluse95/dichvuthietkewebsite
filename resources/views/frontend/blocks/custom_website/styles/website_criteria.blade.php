@@ -8,7 +8,7 @@
     $url_link = $block->url_link != '' ? $block->url_link : '';
     $url_link_title = $block->json_params->url_link_title->{$locale} ?? $block->url_link_title;
     $style = isset($block->json_params->style) && $block->json_params->style == 'slider-caption-right' ? 'd-none' : '';
-    
+
     // Filter all blocks by parent_id
     $block_childs = $blocks->filter(function ($item, $key) use ($block) {
         return $item->parent_id == $block->id;
@@ -17,7 +17,11 @@
 
   <div id="criteria-web">
     <div class="container">
-      <h2>{{ $title }}</h2>
+        <div class="v-title">
+            <h2 class="title">
+                {{ $title }}
+            </h2>
+        </div>
       <div class="row">
         @if ($block_childs)
             @foreach ($block_childs as $item)
@@ -33,8 +37,8 @@
                 <div class="criteria-item">
                   <div class="criteria-img">
                     <img
-                    class="lazyload" 
-                    src="{{ asset('themes/frontend/f4web/images/lazyload.gif')}}" 
+                    class="lazyload"
+                    src="{{ asset('themes/frontend/f4web/images/lazyload.gif')}}"
                     data-src="{{ $image_sub }}" alt="{{ $title_sub }}"
                     />
                   </div>

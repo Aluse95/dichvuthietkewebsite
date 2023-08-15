@@ -44,6 +44,7 @@ $(document).ready(function() {
             });
         }
     });
+
     $('.owl-carousel.carousel-news').owlCarousel({
         center: true,
         loop: true,
@@ -88,6 +89,7 @@ $(document).ready(function() {
             });
         }
     });
+
     $('.owl-carousel.customer-logos').owlCarousel({
         center: true,
         loop: true,
@@ -111,5 +113,82 @@ $(document).ready(function() {
             }
         },
     });
+
+    $('.owl-carousel.process-list').owlCarousel({
+        center: true,
+        loop: true,
+        margin: 52,
+        nav: true,
+        startPosition: 1,
+        navText: [
+            "<button class='slick-prev'></button>",
+            "<button class='slick-next'></button>"
+        ],
+        autoplay: true,
+        autoplayHoverPause: false,
+        responsive: {
+            0: {
+                items: 1,
+                margin: 20, /* Điều chỉnh khoảng cách */
+                navText: false
+            },
+            600: {
+                items: 3,
+                margin: 30,
+                navText: false
+            },
+            1000: {
+                items: 3
+            }
+        },
+        onInitialized: function (event) {
+            var currentIndex = $(event.target).find('.owl-item.center').index();
+            $(event.target).find('.owl-item').each(function (index) {
+                if (Math.abs(currentIndex - index) > 1) {
+                    $(this).addClass('fadeout');
+                }
+            });
+        },
+        onTranslated: function (event) {
+            $(event.target).find('.owl-item').removeClass('fadeout');
+            var currentIndex = $(event.target).find('.owl-item.center').index();
+            $(event.target).find('.owl-item').each(function (index) {
+                if (Math.abs(currentIndex - index) > 1) {
+                    $(this).addClass('fadeout');
+                }
+            });
+        }
+    });
+
+    $('.owl-carousel.advantage-list').owlCarousel({
+        center: false,
+        loop: true,
+        margin: 52,
+        nav: true,
+        startPosition: 1,
+        navText: [
+            "<button class='slick-prev'></button>",
+            "<button class='slick-next'></button>"
+        ],
+        autoplay: true,
+        autoplayHoverPause: false,
+        responsive: {
+            0: {
+                items: 1,
+                margin: 20, /* Điều chỉnh khoảng cách */
+                navText: false
+            },
+            600: {
+                items: 3,
+                margin: 30,
+                navText: false
+            },
+            1000: {
+                items: 3
+            }
+        },
+    });
+
+
 
 });

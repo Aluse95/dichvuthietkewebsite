@@ -11,50 +11,53 @@
     });
   @endphp
 
-    <div id="advantage">
-        <div class="container">
-        <h2>{{ $title }}</h2>
-        <div class="row">
-            <div class="col-lg-6 col-sm-12">
-                <div class="advantage-img mt-5">
-                    <img class="lazyload" 
-                    src="{{ asset('themes/frontend/f4web/images/lazyload.gif')}}" 
-                    data-src="{{ $image }}" alt="{{ $title }}" />
-                    <img class="lazyload" 
-                    src="{{ asset('themes/frontend/f4web/images/lazyload.gif')}}" 
-                    data-src="{{ $image_background }}" alt="{{ $title }}" />
-                </div>
-            </div>
-            <div class="col-lg-6 col-sm-12">
-                <div class="advantage-content">
-                    <h3>{{ $brief }}</h3>
-                    <p>
-                      {{ $content }}
-                    </p>
-                </div>
-                <div class="advatage-content-list">
+  <section id="advantage" class="advantage">
+      <div class="text-white">
+          <img class="card-img" src="{{asset('themes/frontend/website-service/images/bg-advantage.jpg')}}" alt="Card image">
+          <div class="box-advantage">
+              <div class="v-title text-center">
+                  <h2 class="title">
+                      {{ $title }}
+                  </h2>
+                  <div class="desc">
+                      <p>{!! $brief !!}</p>
+                  </div>
+              </div>
+              <div class="owl-carousel advantage-list">
                   @if ($block_childs)
-                    @foreach ($block_childs as $item)
-                      @php
-                        $title_sub = $item->json_params->title->{$locale} ?? $item->title;
-                        $content_sub = $item->json_params->content->{$locale} ?? $item->content;
-                        $icon_sub = $item->icon != '' ? $item->icon : null;
-                      @endphp
-
-                      <div class="advantage-content-item">
-                          <i class="{{ $icon_sub }}"></i>
-                          <div class="advantage-content-item-text">
-                              <h4>{{ $title_sub }}</h4>
-                              <p>
-                                {{ $content_sub }}
-                              </p>
+                      @foreach ($block_childs as $item)
+                          @php
+                              $title_sub = $item->json_params->title->{$locale} ?? $item->title;
+                              $content_sub = $item->json_params->content->{$locale} ?? $item->content;
+                              $icon_sub = $item->icon != '' ? $item->icon : null;
+                              $image_sub = $item->image != '' ? $item->image : null;
+                          @endphp
+                          <div class="advantage-list__item item">
+                              <div class="content">
+                                  @if($image_sub)
+                                      <div class="box-img">
+                                          <img src="{{$image_sub}}" alt="{{ $title_sub }}">
+                                      </div>
+                                  @else
+                                      <div class="box-icon">
+                                          <div class="box-icon_item">
+                                              <i class="{{ $icon_sub }}"></i>
+                                          </div>
+                                      </div>
+                                  @endif
+                                  <div class="title">{{ $title_sub }}
+                                  </div>
+                                  <div class="box-desc">
+                                      <p>
+                                          {{ $content_sub }}
+                                      </p>
+                                  </div>
+                              </div>
                           </div>
-                      </div>
-                    @endforeach
+                      @endforeach
                   @endif
-                </div>
-            </div>
-        </div>
-        </div>
-    </div>
+              </div>
+          </div>
+      </div>
+  </section>
 @endif

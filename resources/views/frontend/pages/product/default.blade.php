@@ -57,7 +57,7 @@ $page_description = $taxonomy->json_params->description->{$locale} ?? $page->des
                             <img class="lazyload" src="{{ asset('themes/frontend/f4web/images/lazyload.gif')}}"
                                  data-src="{{ $image }}" alt="{{ $title }}" />
                         </div>
-                        <a href="{{ $alias }}" class="project-item-title">{{ $title }}</a>
+                        <a href="#" class="project-item-title">{{ $title }}</a>
                     </div>
                 </div>
             @endforeach
