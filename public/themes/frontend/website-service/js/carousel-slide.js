@@ -3,6 +3,9 @@ $(document).ready(function() {
         center: true,
         loop: true,
         margin: 80,
+        autoplayTimeout: 5000,
+        animateOut: 'fadeOut', // Animation khi slide ra
+        animateIn: 'fadeIn',   // Animation khi slide vào
         nav: true,
         navText: [
             "<button class='slick-prev'></button>",
@@ -48,6 +51,9 @@ $(document).ready(function() {
     $('.owl-carousel.carousel-news').owlCarousel({
         center: true,
         loop: true,
+        autoplayTimeout: 5000,
+        animateOut: 'fadeOut', // Animation khi slide ra
+        animateIn: 'fadeIn',   // Animation khi slide vào
         margin: 77,
         nav: true,
         navText: [
@@ -93,6 +99,9 @@ $(document).ready(function() {
     $('.owl-carousel.customer-logos').owlCarousel({
         center: true,
         loop: true,
+        autoplayTimeout: 5000,
+        animateOut: 'fadeOut', // Animation khi slide ra
+        animateIn: 'fadeIn',   // Animation khi slide vào
         margin: 45,
         nav: true,
         navText: false,
@@ -117,6 +126,9 @@ $(document).ready(function() {
     $('.owl-carousel.process-list').owlCarousel({
         center: true,
         loop: true,
+        autoplayTimeout: 5000,
+        animateOut: 'fadeOut', // Animation khi slide ra
+        animateIn: 'fadeIn',   // Animation khi slide vào
         margin: 52,
         nav: true,
         startPosition: 1,
@@ -163,6 +175,9 @@ $(document).ready(function() {
     $('.owl-carousel.advantage-list').owlCarousel({
         center: false,
         loop: true,
+        autoplayTimeout: 5000,
+        animateOut: 'fadeOut', // Animation khi slide ra
+        animateIn: 'fadeIn',   // Animation khi slide vào
         margin: 52,
         nav: true,
         startPosition: 1,

@@ -58,9 +58,11 @@
                   @endforeach
               </div>
               <div class="template-detail-button text-center">
+                  <a href="/kho-giao-dien">
                       <button id="loadMoreButton" class="btn btn-primary btn-medium">
                           Xem toàn bộ Ngành hàng
                       </button>
+                  </a>
               </div>
           </div>
       </section>

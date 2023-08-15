@@ -17,7 +17,9 @@
 <div class="site-mobile-menu site-navbar-target">
     <div class="site-mobile-menu-header">
         <div class="site-mobile-menu-close mt-3">
-            <span class="icon-close2 js-menu-toggle"></span>
+            <span class="icon-close2 js-menu-toggle">
+                <i class="fas fa-times"></i>
+            </span>
         </div>
     </div>
     <div class="site-mobile-menu-body"></div>
@@ -98,11 +100,14 @@
                             @endphp
                         @endisset
                         <li class="search-container">
+                            <div class="search-bar">
+                                <input type="text" placeholder="Tìm kiếm...">
                                 <img
                                     class=""
                                     src="<?php echo (asset('themes/frontend/website-service/images/icon-search.svg')); ?>"
                                     alt="icon-search"
                                 />
+                            </div>
                         </li>
                         <li>
                             <a href="/lien-he" class="nav-link text-white">
@@ -114,9 +119,7 @@
             </div>
 
             <div class="toggle-button d-inline-block d-lg-none">
-                <a href="#" class="site-menu-toggle py-5 js-menu-toggle text-black"
-                ><span class="icon-menu h3"></span
-                    ></a>
+                <a href="#" class="site-menu-toggle py-5 js-menu-toggle text-black"><i class="fas fa-bars"></i></a>
             </div>
         </div>
     </div>
