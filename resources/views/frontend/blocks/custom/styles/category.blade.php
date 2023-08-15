@@ -41,7 +41,7 @@
                           $alias = $item->alias ?? '';
                           $alias_category = App\Helpers::generateRoute(App\Consts::TAXONOMY['product'], $item->alias ?? $title, $item->id);
                       @endphp
-                  <div class="category-list__item col-4 col-lg-20">
+                  <div class="category-list__item col-md-4 col-6 col-lg-20">
                       <a href="{{ $alias_category }}" class="category-item">
 
                       <div class="content text-center">

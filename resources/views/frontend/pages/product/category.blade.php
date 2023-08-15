@@ -62,7 +62,7 @@
                     // $alias = route(App\Consts::ROUTE_POST['product'], ['alias_category' => $item->alias ?? Str::slug($item->title)]);
                     $alias = App\Helpers::generateRoute(App\Consts::TAXONOMY['post'], $item->alias ?? $title, $item->id, 'detail', $item->taxonomy_title);
                 @endphp
-                <div class="category-list__item col-lg-4 col-4">
+                <div class="category-list__item col-lg-4 col-12">
                     <div class="content">
                         <div class="img">
                             <img class="lazyload" src="{{ asset('themes/frontend/f4web/images/lazyload.gif')}}"
@@ -95,7 +95,7 @@
                             $alias_category = App\Helpers::generateRoute(App\Consts::TAXONOMY['product'], $item->alias ?? $title, $item->id);
                         @endphp
 
-                        <div class="category-list__item col-4 col-lg-20">
+                        <div class="category-list__item col-md-4 col-6 col-lg-20">
                             <a href="{{ $alias_category }}" class="category-item">
                                 <div class="content text-center bora-10">
                                     <div class="img">

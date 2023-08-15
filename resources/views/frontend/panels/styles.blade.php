@@ -5,7 +5,7 @@
   integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
   crossorigin="anonymous" referrerpolicy="no-referrer" />
 {{--<link rel="preload" href="{{ asset('themes/frontend/f4web/css/style.css') }}" as="style" />--}}
-<link rel="preload" href="{{ asset('themes/frontend/f4web/css/responsive.css') }}" as="style" />
+{{--<link rel="preload" href="{{ asset('themes/frontend/f4web/css/responsive.css') }}" as="style" />--}}
 <link rel="stylesheet" href="{{ asset('themes/frontend/f4web/css/all.min.css') }}" type="text/css" />
 {{--<link rel="stylesheet" href="{{ asset('themes/frontend/f4web/css/style.css') }}" type="text/css" />--}}
 <link rel="stylesheet" href="{{ asset('themes/frontend/f4web/css/custom.css?v=1.1') }}" type="text/css" />
@@ -21,7 +21,7 @@
 {{--<link rel="stylesheet" href="{{ asset('themes/frontend/f4web/css/webapp.css') }}" type="text/css" />--}}
 {{--<link rel="stylesheet" href="{{ asset('themes/frontend/f4web/css/seo.css') }}" type="text/css" />--}}
 {{--<link rel="stylesheet" href="{{ asset('themes/frontend/f4web/css/content-seo.css') }}" type="text/css" />--}}
-<link rel="stylesheet" href="{{ asset('themes/frontend/f4web/css/responsive.css') }}" type="text/css" />
+{{--<link rel="stylesheet" href="{{ asset('themes/frontend/f4web/css/responsive.css') }}" type="text/css" />--}}
 
 {{--VanHT--}}
 <link rel="stylesheet" href="{{ asset('themes/frontend/website-service/css/all.min.css') }}" type="text/css" />

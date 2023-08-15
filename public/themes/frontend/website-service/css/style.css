@@ -19,6 +19,9 @@
     /*margin-right: calc(-50vw + 50%);*/
     max-width: none; /* Bỏ giới hạn chiều rộng tối đa */
 }
+.icon-menu:before {
+    content: "\e5d2";
+}
 
 @media (min-width: 1400px) {
     .container {
@@ -43,7 +46,7 @@ body {
     background-color: #FFFFFF;
     height: 100vh;
     position: relative;
-    cursor: initial;
+    cursor: default;
 }
 
 body:before {
@@ -3912,6 +3915,28 @@ a p {
     .slider-about-us .bg_page .content-page .title {
         padding-bottom: 20px;
     }
+    .our-projects .center img{
+        max-height: 300px;
+    }
+    .title-bottom a {
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 19px;
+        color: #FFFFFF;
+    }
+    .title-bottom {
+        padding: 10px 0;
+    }
+
+    .our-projects .card-img-overlay {
+        padding: 30px 0 0 0;
+    }
+    .our-projects .template-detail-button {
+        bottom: 15px;
+    }
+    .interface-store .v-title {
+        padding: 30px 0 20px;
+    }
 }
 
 @media  screen and (min-width: 576px) and (max-width: 767px) {
@@ -4248,6 +4273,10 @@ a p {
 
     .why-choose-us .why-choose .card p{
         padding-top: 0;
+    }
+
+    .our-projects .center img{
+        max-height: 150px;
     }
 }
 
