@@ -81,7 +81,7 @@
                                   $title_sub_2 = $item->json_params->brief->{$locale} ?? $item->brief;
                                   $image_sub_2 = $item->image != '' ? $item->image : null;
                               @endphp
-                              <div class="avatar-item col-lg-3 col-md-6 col-12">
+                              <div class="avatar-item col-md-3 col-6">
                           <div class="card">
                               <img class="card-img-top lazyload" src="{{ asset('themes/frontend/f4web/images/lazyload.gif')}}"
                                    data-src="{{ $image_sub_2 }}" alt="{{ $title_child_2 }}" />

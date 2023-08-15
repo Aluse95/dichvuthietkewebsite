@@ -63,7 +63,7 @@
 
                       </div>
                   </div>
-                  <div class="col-lg-6 col-12 bg-img px-0">
+                  <div class="col-lg-6 col-12 bg-img px-0 d-lg-block d-none">
                       <img class="lazyload img-fluid" src="{{ asset('themes/frontend/f4web/images/lazyload.gif')}}"
                            data-src="{{ $image_child }}" alt="{{ $title_child }}"/>
                   </div>
