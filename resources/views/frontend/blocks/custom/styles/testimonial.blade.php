@@ -75,13 +75,13 @@
                   @endforeach
               @endif
           </div>
-          <div class="template-detail-button">
-              <a href="#" class="">
-                  <button class="btn bg-primary btn-medium">
-                      Xem toàn bộ khách hàng
-                  </button>
-              </a>
-          </div>
+{{--          <div class="template-detail-button">--}}
+{{--              <a href="#" class="">--}}
+{{--                  <button class="btn bg-primary btn-medium">--}}
+{{--                      Xem toàn bộ khách hàng--}}
+{{--                  </button>--}}
+{{--              </a>--}}
+{{--          </div>--}}
       </div>
   </section>
 

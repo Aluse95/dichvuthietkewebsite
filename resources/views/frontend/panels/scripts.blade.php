@@ -241,8 +241,8 @@
   }
 
   $(document).ready(function(){
-      $('.search-container').mouseover(function(){
-          $('.lupa').addClass('lupa_buscador');
+      $('.search-container').click(function(){
+          $('.search-container').addClass('lupa_buscador');
       });
       $('.search-container').mouseleave(function(){
           $('.search-container').removeClass('lupa_buscador');

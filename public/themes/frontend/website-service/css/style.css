@@ -1952,7 +1952,7 @@ a, a:hover {
 .box-advantage .v-title p{
     font-size: 22px;
     font-weight: 300;
-    line-height: 36px; /
+    line-height: 36px;
 }
 
 .step {
@@ -2339,6 +2339,10 @@ a, a:hover {
 }
 /* END CSS PRICE TABLE */
 
+.search-submit-button {
+    border: none;
+    background-color: transparent;
+}
 
 /*end VanHt*/
 .our-projects .template-detail-button {

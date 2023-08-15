@@ -1,19 +1,4 @@
 {{-- START HEADER --}}
-
-{{--<form class="" action="{{ route('frontend.search.index') }}" method="get">--}}
-{{--    <div id="search-modal">--}}
-{{--        <div class="search-modal-container">--}}
-{{--            <div class="search-modal-close-button">--}}
-{{--                <i class="fa-solid fa-circle-xmark"></i>--}}
-{{--            </div>--}}
-{{--            <p class="title">Tìm kiếm</p>--}}
-{{--            <input type="search" name="keyword" placeholder="Tìm kiếm" value="{{ $params['keyword'] ?? '' }}"/>--}}
-{{--            <button type="submit" class="search-submit-button">--}}
-{{--                Tìm kiếm--}}
-{{--            </button>--}}
-{{--        </div>--}}
-{{--    </div>--}}
-{{--</form>--}}
 <div class="site-mobile-menu site-navbar-target">
     <div class="site-mobile-menu-header">
         <div class="site-mobile-menu-close mt-3">
@@ -100,14 +85,17 @@
                             @endphp
                         @endisset
                         <li class="search-container">
-                            <div class="search-bar">
-                                <input type="text" placeholder="Tìm kiếm...">
-                                <img
-                                    class=""
-                                    src="<?php echo (asset('themes/frontend/website-service/images/icon-search.svg')); ?>"
-                                    alt="icon-search"
-                                />
-                            </div>
+                            <form class="" action="{{ route('frontend.search.index') }}" method="get">
+                                <div class="search-bar">
+                                    <input type="search" name="keyword" placeholder="Tìm kiếm" value="{{ $params['keyword'] ?? '' }}"/>
+                                    <button type="submit" class="search-submit-button">
+                                        <img class=""
+                                            src="{{ asset('themes/frontend/website-service/images/icon-search.svg') }}"
+                                            alt="icon-search"
+                                        />
+                                    </button>
+                                </div>
+                            </form>
                         </li>
                         <li>
                             <a href="/lien-he" class="nav-link text-white">
@@ -124,3 +112,17 @@
         </div>
     </div>
 </header>
+{{-- <form class="" action="{{ route('frontend.search.index') }}" method="get">
+    <div id="search-modal">
+        <div class="search-modal-container">
+            <div class="search-modal-close-button">
+                <i class="fa-solid fa-circle-xmark"></i>
+            </div>
+            <p class="title">Tìm kiếm</p>
+            <input type="search" name="keyword" placeholder="Tìm kiếm" value="{{ $params['keyword'] ?? '' }}"/>
+            <button type="submit" class="search-submit-button">
+                Tìm kiếm
+            </button>
+        </div>
+    </div>
+ </form> --}}
